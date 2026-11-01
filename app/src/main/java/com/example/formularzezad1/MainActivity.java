@@ -11,6 +11,7 @@ import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -81,10 +82,47 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnSubmit.setOnClickListener(v ->
-                tvSummary.setText(buildSummary()));
+        btnSubmit.setOnClickListener(v -> {
+            if (validateForm()) {
+                tvSummary.setText(buildSummary());
+            }
+        });
 
         tvLevelValue.setText(String.valueOf(sbLevel.getProgress()));
+    }
+
+    private boolean validateForm() {
+        String name = etName.getText().toString().trim();
+        String email = etEmail.getText().toString().trim();
+
+        if (name.isEmpty()) {
+            etName.setError("Podaj imię i nazwisko");
+            etName.requestFocus();
+            return false;
+        }
+
+        if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            etEmail.setError("Niepoprawny adres e-mail");
+            etEmail.requestFocus();
+            return false;
+        }
+
+        if (birthDate.isEmpty()) {
+            Toast.makeText(this, "Wybierz datę urodzenia", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        if (spCourse.getSelectedItemPosition() == 0) {
+            Toast.makeText(this, "Wybierz kurs z listy", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        if (rgMode.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "Zaznacz tryb zajęć", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        return true;
     }
 
     private void showDatePicker() {
