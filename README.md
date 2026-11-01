@@ -3,7 +3,7 @@ PIERWSZY SS - PIERWSZY COMMIT
 
 
 DRUGI SS - DRUGI COMMIT
-img width="1281" height="1385" alt="image" src="https://github.com/user-attachments/assets/045a6afa-d75a-4854-9659-df76bef06c8c" />
+<img width="1281" height="1385" alt="image" src="https://github.com/user-attachments/assets/045a6afa-d75a-4854-9659-df76bef06c8c" />
 
 TRZECI SS - TRZECI COMMIT
 <img width="886" height="780" alt="image" src="https://github.com/user-attachments/assets/8b7dc142-e59b-48ec-8265-b54b3469783a" />
