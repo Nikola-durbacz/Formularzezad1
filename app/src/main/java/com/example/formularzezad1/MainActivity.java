@@ -13,9 +13,11 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.materialswitch.MaterialSwitch;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.Calendar;
 import java.util.Locale;
@@ -84,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnSubmit.setOnClickListener(v -> {
             if (validateForm()) {
-                tvSummary.setText(buildSummary());
+                showConfirmation();
             }
         });
 
@@ -123,6 +125,23 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return true;
+    }
+
+    private void showConfirmation() {
+        new AlertDialog.Builder(this)
+                .setTitle("Potwierdzenie zapisu")
+                .setMessage("Czy na pewno chcesz wysłać formularz?")
+                .setPositiveButton("Tak", (dialog, which) -> {
+                    tvSummary.setText(buildSummary());
+
+                    Snackbar.make(
+                            findViewById(R.id.main),
+                            "Formularz został wysłany",
+                            Snackbar.LENGTH_LONG
+                    ).show();
+                })
+                .setNegativeButton("Anuluj", (dialog, which) -> dialog.dismiss())
+                .show();
     }
 
     private void showDatePicker() {
