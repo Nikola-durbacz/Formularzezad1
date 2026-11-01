@@ -3,11 +3,13 @@ package com.example.formularzezad1;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView tvLevelValue, tvSummary;
     private MaterialSwitch swNewsletter;
     private CheckBox cbTerms;
+    private Spinner spCourse;
 
     private String birthDate = "";
 
@@ -44,6 +47,19 @@ public class MainActivity extends AppCompatActivity {
         tvSummary = findViewById(R.id.tvSummary);
         swNewsletter = findViewById(R.id.swNewsletter);
         cbTerms = findViewById(R.id.cbTerms);
+        spCourse = findViewById(R.id.spCourse);
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                this,
+                R.array.courses,
+                android.R.layout.simple_spinner_item
+        );
+
+        adapter.setDropDownViewResource(
+                android.R.layout.simple_spinner_dropdown_item
+        );
+
+        spCourse.setAdapter(adapter);
 
         cbTerms.setOnCheckedChangeListener((buttonView, isChecked) ->
                 btnSubmit.setEnabled(isChecked));
@@ -103,9 +119,12 @@ public class MainActivity extends AppCompatActivity {
                 ? getString(R.string.yes_short)
                 : getString(R.string.no_short);
 
+        String course = spCourse.getSelectedItem().toString();
+
         return etName.getText().toString().trim() + "\n"
                 + etEmail.getText().toString().trim() + "\n"
                 + "Ur. " + birthDate + "\n"
+                + "Kurs: " + course + "\n"
                 + "Tryb: " + mode + "\n"
                 + "Poziom: " + sbLevel.getProgress() + "/10\n"
                 + "Newsletter: " + newsletter;
