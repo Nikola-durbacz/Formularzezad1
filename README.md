@@ -2,3 +2,6 @@ PIERWSZY SS - PIERWSZY COMMIT <img width="1283" height="1391" alt="image" src="h
 
 
 DRUGI SS - DRUGI COMMIT<img width="1281" height="1385" alt="image" src="https://github.com/user-attachments/assets/045a6afa-d75a-4854-9659-df76bef06c8c" />
+
+TRZECI SS - TRZECI COMMIT<img width="886" height="780" alt="image" src="https://github.com/user-attachments/assets/8b7dc142-e59b-48ec-8265-b54b3469783a" />
+
