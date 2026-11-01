@@ -5,3 +5,7 @@ DRUGI SS - DRUGI COMMIT<img width="1281" height="1385" alt="image" src="https://
 
 TRZECI SS - TRZECI COMMIT<img width="886" height="780" alt="image" src="https://github.com/user-attachments/assets/8b7dc142-e59b-48ec-8265-b54b3469783a" />
 
+
+CZWARTY SS - CZWARTY COMMIT<img width="472" height="770" alt="image" src="https://github.com/user-attachments/assets/436ade71-0ad8-45ba-9584-ae28ae9178ce" />
+
+PIĄTY SS - PIĄTY COMMIT<img width="578" height="863" alt="image" src="https://github.com/user-attachments/assets/d1e7963b-a853-41e1-912a-5153910ac3d3" />
